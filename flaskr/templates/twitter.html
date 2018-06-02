@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="{{ url_for('search_tweet') }}" method=post >
+
+<input type="text" name="keyword" class="form-control form-control-lg" placeholder="Tweet Search" aria-label="Tweet" aria-describedby="basic-addon2">
+<div class="input-group-append">
+  <button class="btn btn-outline-info" href="{{ url_for('search_tweet') }}"　type="button">SEARCH</button>
+</div>
+{% endblock %}

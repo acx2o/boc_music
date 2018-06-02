@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+<table class="table">
+  <thead>
+    <tr><!--行を表す-->
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">song_title</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for album in albums %}
+      <tr>
+        <th>見出し</th>
+        <td>{{album.title}}</td>
+        <!-- tdでセルを追加 -->
+        <td>
+        {% for song in album.songs %}
+          <p>{{song.title}}</p>
+        {% endfor %}
+        </td>
+      </tr>
+    {% endfor %}
+</table>
+{% endblock %}
