@@ -37,13 +37,13 @@ class Album(db.Model):
     created_at = db.Column(db.DateTime, nullable=False)
     updated_at = db.Column(db.DateTime, nullable=False)
 
-    songs = db.relationship('Song', backref='albums', lazy=True)
+    songs = db.relationship('Song', backref='album', lazy=True)
 
 
-# これを書くと、このかかれたものは、カラムを持っていることを示してくれる
-def __repr__(self):
-    return '<Artist id={id} name={artist_name!r}>'.format(
-                id=self.id, name=self.name)
+    # これを書くと、このかかれたものは、カラムを持っていることを示してくれる
+    # def __repr__(self):
+    #     return '<Artist id={id} name={artist_name!r}>'.format(
+    #                 id=self.id, name=self.name)
 
 def init():
     print("==============================")
