@@ -10,20 +10,4 @@
       </div>
     </div>
   </form>
-
-  <table class="table">
-    <thead>
-      <tr><!--行を表す-->
-        <th scope="col">#</th>
-        <th scope="col">Artistname</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for artist in artists %}
-        <tr>
-          <th>見出し</th>
-          <td>{{artist.name}}</td>
-        </tr>
-      {% endfor %}
-  </table>
 {% endblock %}
