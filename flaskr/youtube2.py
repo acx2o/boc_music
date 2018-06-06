@@ -4,7 +4,6 @@ from apiclient.errors import HttpError
 from oauth2client.tools import argparser
 import os
 
-
 # Set DEVELOPER_KEY to the API key value from the APIs & auth > Registered apps
 # tab of
 #   https://cloud.google.com/console
@@ -26,9 +25,6 @@ def youtube_search(query):
     ).execute()
 
     videos = []
-    # channels = []
-    # playlists = []
-
     # Add each result to the appropriate list, and then display the lists of
     # matching videos, channels, and playlists.
     print(search_response)
@@ -36,18 +32,12 @@ def youtube_search(query):
         if search_result["id"]["kind"] == "youtube#video":
             # videos.append("%s (%s)" % (search_result["snippet"]["title"],search_result["id"]["videoId"]))
             videos.append([search_result["snippet"]["title"],search_result["id"]["videoId"]])
-        # elif search_result["id"]["kind"] == "youtube#channel":
-        #     channels.append("%s (%s)" % (search_result["snippet"]["title"],
-        #     search_result["id"]["channelId"]))
-        # elif search_result["id"]["kind"] == "youtube#playlist":
-        #     playlists.append("%s (%s)" % (search_result["snippet"]["title"],
-        #                             search_result["id"]["playlistId"]))
+
     # print(videos)
-    # print(videos[0][1])
+    print(videos[0][1])
     return videos[0][1]
     # print("Videos:\n", "\n".join(videos), "\n")
-    # print("Channels:\n", "\n".join(channels), "\n")
-    # print("Playlists:\n", "\n".join(playlists), "\n")
+
 
 
 if __name__ == "__main__":
