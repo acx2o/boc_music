@@ -22,7 +22,7 @@ def youtube_search(query):
     search_response = youtube.search().list(
     q=query,
     part="id,snippet",
-    maxResults=20
+    maxResults=1
     ).execute()
 
     videos = []
@@ -42,8 +42,8 @@ def youtube_search(query):
         # elif search_result["id"]["kind"] == "youtube#playlist":
         #     playlists.append("%s (%s)" % (search_result["snippet"]["title"],
         #                             search_result["id"]["playlistId"]))
-    print(videos)
-    print(videos[0][1])
+    # print(videos)
+    # print(videos[0][1])
     return videos[0][1]
     # print("Videos:\n", "\n".join(videos), "\n")
     # print("Channels:\n", "\n".join(channels), "\n")
