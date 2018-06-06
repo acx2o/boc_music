@@ -3,20 +3,20 @@
 <table class="table">
   <thead>
     <tr><!--行を表す-->
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">song_title</th>
+      <th scope="col">Published_at</th>
+      <th scope="col">Album_name</th>
+      <th scope="col">Song_title</th>
     </tr>
   </thead>
   <tbody>
     {% for album in albums %}
       <tr>
-        <th>見出し</th>
+        <th>{{album.published_at}}</th>
         <td>{{album.title}}</td>
         <!-- tdでセルを追加 -->
         <td>
         {% for song in album.songs %}
-          <p>{{song.title}}</p>
+          <p><a href=/show_video/{{song.id}}>{{song.title}}</p>
         {% endfor %}
         </td>
       </tr>
