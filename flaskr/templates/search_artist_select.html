@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+  <form action="{{ url_for('artists') }}" method=get >
+
+    <div class="input-group mb-3">
+      <!-- <label for="exampleFormControlInput1">Search Artist !</label> -->
+      <input type="text" name="keyword" class="form-control form-control-lg" placeholder="Artist name" aria-label="Artist name" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-info" type="submit">SEARCH</button>
+      </div>
+    </div>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr><!--行を表す-->
+        <th scope="col">#</th>
+        <th scope="col">Artistname</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for artist in artists %}
+        <tr>
+          <th>見出し</th>
+          <td>{{artist.name}}</td>
+        </tr>
+      {% endfor %}
+  </table>
+{% endblock %}
