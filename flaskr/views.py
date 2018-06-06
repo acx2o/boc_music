@@ -16,13 +16,13 @@ def artists():
     keyword = request.args.get('keyword')
     # print(keyword)
     likekeyword = "%" + keyword + "%"
-    print(likekeyword)
+    # print(likekeyword)
     artists = Artist.query.filter(Artist.name.like(likekeyword)).all()
     query = Artist.query.filter(Artist.name.like(likekeyword))
     print(query.statement.compile(dialect=mysql.dialect(),
                                   compile_kwargs={"literal_binds": True}))
-    print(artists)
-    return render_template('search_artist_select.html', artists=artists)
+    # print(artists)
+    return render_template('search_artist_select.html', artists=artists, artist_id=Artist.id)
 
 @app.route('/show_artist/<int:artist_id>', methods=['GET'])
 def show_artist(artist_id):
