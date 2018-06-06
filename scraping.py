@@ -1,7 +1,7 @@
 import requests, datetime
 from bs4 import BeautifulSoup
 import sys
-import time
+import time,json
 from flaskr import db, app
 from flaskr.models import Artist, Song, Album
 
@@ -12,6 +12,9 @@ def add_artist(artist_name):
         updated_at=datetime.datetime.now()
     )
     db.session.add(artist)
+    # flushしないとidが取れない
+    db.session.flush()
+    db.session.refresh(artist)
     return artist
 
 
@@ -36,6 +39,8 @@ def add_Album(album_title, artist_id, published_at, product_code):
         updated_at=datetime.datetime.now()
     )
     db.session.add(album)
+    db.session.flush()
+    db.session.refresh(album)
     return album
 
 
@@ -81,6 +86,7 @@ def clowl_album(url):
 
 
         artist = add_artist(artist_name)    #add_artist関数にartist_nameを入れて実行
+        print('Add artist: artistId: {}, name: {}'.format(artist.id, artist.name))
         # print(artist.id)
         # print(artist.name)
 
@@ -115,6 +121,21 @@ def clowl_album(url):
 
 if __name__ == '__main__':#scraping.pyを呼びたした時だけ、main()が動くようにしている　これはいつもつけるべき　
     main()
+    # ライブラリインポート
+
+
+    # Slackで通知設定
+    URL='https://hooks.slack.com/services/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'
+    TEXT='finish!!!!!'
+    USERNAME='test_username'
+
+    # post
+    post_json = {
+        'text': TEXT,
+        'username': USERNAME,
+        'link_names': 1
+    }
+    requests.post(URL, data = json.dumps(post_json))
 
 
 
