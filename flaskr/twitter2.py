@@ -5,10 +5,10 @@ import datetime, time
 
 def tweet_collect(keyword):
 
-    CK = '2yOysjosPjElFJuFloUtrNUAn'                             # Consumer Key
-    CS = 'kHGmEQsOkMeTxsBnAvh92dKedMDAa2PiVWPHXjxLvSMIVo268a'    # Consumer Secret
-    AT = '703918337500155904-2HMqSMpfoEpUqmTgbAdvu5e6FeHuHDD'    # Access Token
-    AS = '26u6rM59LDVnY6cX5TFS6f6BM4W20FBNlRmmzsB6DYAk8'         # Accesss Token Secert
+    CK = os.environ['CK']      # Consumer Key
+    CS = os.environ['CS']      # Consumer Secret
+    AT = os.environ['AT']      # Access Token
+    AS = os.environ['AS']      # Accesss Token Secert
 
     session = OAuth1Session(CK, CS, AT, AS)
 
