@@ -6,6 +6,7 @@ from flaskr import db, app
 from flaskr.models import Artist, Song, Album
 
 def add_artist(artist_name):
+    #オブジェクトを新しく作成
     artist = Artist(
         name=artist_name,           #スクレイピングしてきたアーティストの名前を入れる
         created_at=datetime.datetime.now(),
