@@ -4,6 +4,7 @@ from flask import request, redirect, url_for, render_template, flash, jsonify
 from flaskr import db, app
 from flaskr.models import Artist, Song, Album
 from sqlalchemy.dialects import mysql
+import re
 
 #最初の検索画面
 @app.route('/', methods=['GET'])
@@ -42,8 +43,15 @@ def show_artist(artist_id):
 @app.route('/show_video/<int:song_id>', methods=['GET'])
 def show_video(song_id):
     song = Song.query.get(song_id)
-    video_id = youtube_search(query=song.title+' '+song.artist.name)
+    # song_name = re.sub(r'^[\d+]', '', song.title)
+    search_words = song.artist.name + ' '+ song.title
+    # query = search_words.replace(" ","+")
+    query = search_words
+    video_id = youtube_search(query=query)
+    print("************************")
+    print(video_id)
     return render_template('show_video.html', video_id=video_id, song=song)
+
 
 @app.route('/tweet', methods=['GET'])
 def show_tweet():
