@@ -27,12 +27,12 @@ def youtube_search(query):
     print( youtube.search().list(
     q=query,#検索キーワード
     part="id,snippet",
-    maxResults=30
+    maxResults=10
     ))
     search_response = youtube.search().list(
     q=query,#検索キーワード
     part="id,snippet",
-    maxResults=40
+    maxResults=10
     ).execute()
 
     videos = []
