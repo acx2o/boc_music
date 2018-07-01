@@ -10,8 +10,9 @@ import re
 @app.route('/', methods=['GET'])
 def search_artist():
     artists = Artist.query.all()
-    return render_template('search_artist.html', artists=artists)
+    return render_template('home.html', artists=artists)
 
+#キーワード検索した結果画面
 @app.route('/artists', methods=['GET'])
 def artists():
     keyword = request.args.get('keyword')

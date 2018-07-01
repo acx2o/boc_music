@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block body %}
-<table class="table">
-  <thead>
+<div class="row justify-content-center">
+<table class="table table-striped col-8">
+  <thead class="table-info">
     <tr><!--行を表す-->
       <th scope="col">Published_at</th>
       <th scope="col">Album_name</th>
@@ -22,4 +23,5 @@
       </tr>
     {% endfor %}
 </table>
+</div>
 {% endblock %}
