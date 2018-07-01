@@ -1,29 +1,16 @@
 {% extends "layout.html" %}
 {% block body %}
-
-<!-- <header style="position: absolute; top: 0; width: 100%">
-<form action="{{ url_for('artists') }}" method=get >
-
-    <div class="input-group col-md-5 float-right">
-    <!- <label for="exampleFormControlInput1">Search Artist !</label> -->
-        <!-- <input type="text" name="keyword" class="form-control form-control-lg" placeholder="Artist name" aria-label="Artist name" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-            <button class="btn btn-outline-info" type="submit">SEARCH</button>
-        </div>
-    </div>
-</form>
-</header> -->
   <div class="row justify-content-center">
   <table class="table table-striped col-8" >
     <thead class="table-info" >
       <tr> <!--行を表す-->
-        <th style="width: 35px" scope="col">#</th>
+        <th style="width: 35px" scope="col"></th>
         <th style="width: 300px" scope="col">Artistname</th>
       </tr>
     </thead>
     <tbody>
       {% for artist in artists %}
-        <tr>
+        <tr class="bg-white">
           <th></th>
           <td><a href=/show_artist/{{artist.id}}>{{artist.name}}</a></td>
         </tr>

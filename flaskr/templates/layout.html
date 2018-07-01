@@ -15,9 +15,9 @@
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 
     </head>
-    <body>
-        <nav class="navbar navbar-light bg-light justify-content-between">
-          <a class="navbar-brand">Navbar</a>
+    <body class="bg-info">
+        <nav class="navbar navbar-dark bg-dark justify-content-between">
+          <a class="navbar-brand text-white">Navbar</a>
           <form class="form-inline" action="{{ url_for('artists') }}" method=get>
             <input name="keyword" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button  class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>

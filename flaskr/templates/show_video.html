@@ -1,12 +1,33 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<h2 class="example-title">
+<div class="row justify-content-center">
+<table class="table table-striped col-8">
+  <thead class="table-info">
+    <tr><!--行を表す-->
+      <th scope="col" ></th>
+      <th class="text-center" scope="col"><h2>{{song.title + " " + song.artist.name}}</h2></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="bg-white">
+        <th></th>
+        <td>
+            <div class="video" >
+                <iframe id="ytplayer" type="text/html" width="800" height="500"
+                src="http://www.youtube.com/embed/{{video_id}}?autoplay=1"
+                frameborder="0"/>
+            </div>
+        </td>
+      </tr>
+    </table>
+
+<!-- <h2 class="example-title">
     <span>{{song.title + " " + song.artist.name}} </span>
-</h2>
-<div class="video" >
+</h2> -->
+<!-- <div class="video" >
 <iframe id="ytplayer" type="text/html" width="800" height="500"
   src="http://www.youtube.com/embed/{{video_id}}?autoplay=1"
   frameborder="0"/>
-</div>
+</div> -->
 {% endblock %}
