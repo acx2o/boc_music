@@ -2,7 +2,26 @@ body            { font-family: sans-serif; background: #eee; background-color:#f
 a, h1, h2       { color: #377ba8; }
 h1, h2          { font-family: sans-serif; serif; margin: 0; }
 h1              { border-bottom: 2px solid #eee; }
-h2              { font-size: 1.2em; }
+
+.example-title  { padding: .5em .75em; text-align: center; margin: 20px 0}
+.example-title>span {background: #3883d8;  text-align: center; padding:20px}
+.video       {text-align: center;}
+/* h2:before       {
+                content: "";
+                position: absolute;
+                background: #9de5ff;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                top: 50%;
+                /* border: dashed 1px white; */
+                /* left: 555px;
+                -moz-transform: translateY(-50%);
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                z-index: -1;
+                } */
 
 /* .form-right     {width: 200px; margin-left: auto;} */
 .page           { margin: 2em auto; width: 35em; border: 5px solid #ccc;

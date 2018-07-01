@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
 {% block body %}
 
-<h1>{{song.title + " " + song.artist.name}} </h1>
-<iframe id="ytplayer" type="text/html" width="640" height="360"
+<h2 class="example-title">
+    <span>{{song.title + " " + song.artist.name}} </span>
+</h2>
+<div class="video" >
+<iframe id="ytplayer" type="text/html" width="800" height="500"
   src="http://www.youtube.com/embed/{{video_id}}?autoplay=1"
   frameborder="0"/>
-
+</div>
 {% endblock %}
