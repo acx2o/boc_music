@@ -24,11 +24,11 @@ def youtube_search(query):
     # Call the search.list method to retrieve results matching the specified
     # query term.
     print("***********************")
-    print( youtube.search().list(
-    q=query,#検索キーワード
-    part="id,snippet",
-    maxResults=10
-    ))
+    # print( youtube.search().list(
+    # q=query,#検索キーワード
+    # part="id,snippet",
+    # maxResults=10
+    # ))
     search_response = youtube.search().list(
     q=query,#検索キーワード
     part="id,snippet",

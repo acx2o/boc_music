@@ -1,20 +1,22 @@
 {% extends "layout.html" %}
 {% block body %}
-<table class="table">
-  <thead>
+<div class="row justify-content-center">
+<table class="table col-8">
+  <thead class="table-info">
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
+      <th scope="col"></th>
+      <th scope="col">Tweets</th>
       <th scope="col">created_at</th>
     </tr>
   </thead>
   <tbody>
     {% for tweet in res_text['statuses']: %}
-    <tr>
-      <th scope="row">1</th>
+    <tr class="bg-white">
+      <th scope="row"></th>
       <td>{{tweet.text}}</td>
       <td>{{tweet.created_at}}</td>
     </tr>
      {% endfor %}
 </table>
+</div>
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block body %}
-
+<!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 <div class="row justify-content-center">
 <table class="table table-striped col-8">
   <thead class="table-info">
@@ -20,14 +20,18 @@
             </div>
         </td>
       </tr>
-    </table>
+      <tr>
+        <th></th>
+        <td>
 
-<!-- <h2 class="example-title">
-    <span>{{song.title + " " + song.artist.name}} </span>
-</h2> -->
-<!-- <div class="video" >
-<iframe id="ytplayer" type="text/html" width="800" height="500"
-  src="http://www.youtube.com/embed/{{video_id}}?autoplay=1"
-  frameborder="0"/>
-</div> -->
+            <!-- <div id="social-container">
+                <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" text="#Md" data-url="http://127.0.0.1:5000/"><div class="social-button tw">
+                <i class="fa fa-twitter fa-lg"></i><span>SHARE</span>
+                </div></a>
+            </div> -->
+        </td>
+      </tr>
+     </tbody>
+</table>
+
 {% endblock %}

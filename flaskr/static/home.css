@@ -19,7 +19,7 @@ html, body {
   height: 100%;
   /* margin: 0 auto; */
   width: 100%;
-  max-width: 1920px;
+  max-width: 100%;
   position: relative;
   overflow: hidden;
 }
@@ -107,7 +107,7 @@ html, body {
 /* 星終わり */
 
 #about {
-  background-color: #3883d8;
+  background-color:	#00A8BA;
   height: 100%;
   width: 100%;
 }

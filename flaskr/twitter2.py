@@ -2,6 +2,7 @@ from requests_oauthlib import OAuth1Session
 import sys
 import json
 import datetime, time
+import os
 
 def tweet_collect(keyword):
 
@@ -14,7 +15,7 @@ def tweet_collect(keyword):
 
     url = 'https://api.twitter.com/1.1/search/tweets.json'
     name = keyword  #argvは配列だから配列型に指定してあげないといけない
-    # print(name[1])
+    print(name[1])
     res = session.get(url, params = {'q':name, 'count':20})
 
     #--------------------
